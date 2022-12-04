@@ -1,0 +1,23 @@
+<!DOCTYPE htlm>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type = "text/css" href="{{ url_for('static',filename='styles/main.css') }}">
+    <title></title>
+</head>
+<body>
+    <h1>Heart Failure Prediction</h1>
+    <p>The following prediction model uses KNN. It takes in time, and ejection fraction.</p>
+    <p>For time, it is how many days they have had a follow up with a physician, and ejection fraction is the percentage of how much blood the left ventricle pumps with each contraction.</p>
+    <p>The ejection fraction of a normal heart is between 50 and 70.</p>
+    <p>More visits with a physician and a higher ejection fraction lead to a higher chance of survival.</p>
+    <form action="{{ url_for('prediction')}}" method="post">
+        <input type='text' name="Time" placeholder="Time" required="required" />
+        <input type='text' name="Ejection_fracture" placeholder="Ejection fracture" required="required" />
+        <button type="submit" class="btn btn-primary btn-block btn-large"> Predict</button>
+    <h2> Result is {{x}}</h2>
+    </form>
+
+</body>
+
+</html>
